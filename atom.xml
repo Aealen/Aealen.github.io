@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>方·圆--方寸之间  丨 博客</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://www.fangmingxuan.com/"/>
+  <updated>2020-04-18T17:02:49.373Z</updated>
+  <id>http://www.fangmingxuan.com/</id>
+  
+  <author>
+    <name>隔壁家的三少爷</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo在部署到Github后CNAME文件会消失或改变的解决方法</title>
+    <link href="http://www.fangmingxuan.com/2020/04/14/Hexo%E5%9C%A8%E9%83%A8%E7%BD%B2%E5%88%B0Github%E5%90%8ECNAME%E6%96%87%E4%BB%B6%E4%BC%9A%E6%B6%88%E5%A4%B1%E6%88%96%E6%94%B9%E5%8F%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+    <id>http://www.fangmingxuan.com/2020/04/14/Hexo%E5%9C%A8%E9%83%A8%E7%BD%B2%E5%88%B0Github%E5%90%8ECNAME%E6%96%87%E4%BB%B6%E4%BC%9A%E6%B6%88%E5%A4%B1%E6%88%96%E6%94%B9%E5%8F%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</id>
+    <published>2020-04-14T15:56:08.000Z</published>
+    <updated>2020-04-18T17:02:49.373Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Hexo在部署到Github后CNAME文件会消失或改变的解决方法"><a href="#Hexo在部署到Github后CNAME文件会消失或改变的解决方法" class="headerlink" title="Hexo在部署到Github后CNAME文件会消失或改变的解决方法"></a>Hexo在部署到Github后CNAME文件会消失或改变的解决方法</h2><h4 id="问题经过"><a href="#问题经过" class="headerlink" title="问题经过:"></a>问题经过:</h4><p>在转移网站后,在<strong><em>Github</em></strong>网页上修改CNAME文件中指向的域名后,重新部署Hexo时发现CNAME指向的域名是之前的网站,而没有编程修改后的域名.排查后发现:</p><p>Hexo在Github上部署后,如果配置了一个自定义域名时,会自动在项目仓库根目录想新建一个CNAME文件,但是重新部署后CNAME会消失或者变成修改之前的状态,导致需要再次手动修改.</p><h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法:"></a>解决方法:</h4><p>直接修改 <strong><em>hexo目录</em></strong> 下 <strong><em>source</em></strong> 文件夹内的<strong>CNAME</strong>文件的内容,用编辑器打开,第一行输入需要配置的域名.这样在部署的时候CNAME 文件会自动部署到Github.不用再次手动修改.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Hexo在部署到Github后CNAME文件会消失或改变的解决方法&quot;&gt;&lt;a href=&quot;#Hexo在部署到Github后CNAME文件会消失或改变的解决方法&quot; class=&quot;headerlink&quot; title=&quot;Hexo在部署到Github后CNAME文件会消失或
+      
+    
+    </summary>
+    
+    
+      <category term="Hexo" scheme="http://www.fangmingxuan.com/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="http://www.fangmingxuan.com/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[C语言]基姆拉尔森计算公式</title>
+    <link href="http://www.fangmingxuan.com/2020/04/14/[C%E8%AF%AD%E8%A8%80]%E5%9F%BA%E5%A7%86%E6%8B%89%E5%B0%94%E6%A3%AE%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F/"/>
+    <id>http://www.fangmingxuan.com/2020/04/14/[C%E8%AF%AD%E8%A8%80]%E5%9F%BA%E5%A7%86%E6%8B%89%E5%B0%94%E6%A3%AE%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F/</id>
+    <published>2020-04-14T12:53:26.000Z</published>
+    <updated>2020-04-18T16:52:35.068Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="C语言-基姆拉尔森计算公式"><a href="#C语言-基姆拉尔森计算公式" class="headerlink" title="[C语言]基姆拉尔森计算公式"></a>[C语言]基姆拉尔森计算公式</h1><h3 id="主题-读取系统时间并判断周几-判断周几使用基姆拉尔森计算公式"><a href="#主题-读取系统时间并判断周几-判断周几使用基姆拉尔森计算公式" class="headerlink" title="主题:      读取系统时间并判断周几(判断周几使用基姆拉尔森计算公式)"></a>主题:      读取系统时间并判断周几(判断周几使用基姆拉尔森计算公式)</h3><p>$$<br>W= (d+2<em>m+3</em>(m+1)/5+y+y/4-y/100+y/400) mod 7<br>$$</p><h4 id="1-其中d表示day-日期-m表示month-月份-y表示year-年"><a href="#1-其中d表示day-日期-m表示month-月份-y表示year-年" class="headerlink" title="1.其中d表示day 日期  m表示month 月份  y表示year 年"></a>1.其中d表示day 日期  m表示month 月份  y表示year 年</h4><h4 id="2-mod表示取余"><a href="#2-mod表示取余" class="headerlink" title="2.mod表示取余"></a>2.mod表示取余</h4><h4 id="3-关于时间是如何获取的-方法在代码块的注释中"><a href="#3-关于时间是如何获取的-方法在代码块的注释中" class="headerlink" title="3.关于时间是如何获取的:方法在代码块的注释中"></a>3.关于时间是如何获取的:方法在代码块的注释中</h4><h3 id="代码实现如下"><a href="#代码实现如下" class="headerlink" title="代码实现如下"></a>代码实现如下</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">"stdio.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;time.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">const</span> <span class="keyword">char</span> *<span class="title">getWeekdayByYearday</span><span class="params">(<span class="keyword">int</span> iY, <span class="keyword">int</span> iM, <span class="keyword">int</span> iD)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> iWeekDay = <span class="number">-1</span>;</span><br><span class="line"><span class="keyword">if</span> (<span class="number">1</span> == iM || <span class="number">2</span> == iM)</span><br><span class="line">&#123;</span><br><span class="line">iM += <span class="number">12</span>;</span><br><span class="line">iY--;</span><br><span class="line">&#125;</span><br><span class="line">iWeekDay = (iD + <span class="number">1</span> + <span class="number">2</span> * iM + <span class="number">3</span> * (iM + <span class="number">1</span>) / <span class="number">5</span> + iY + iY / <span class="number">4</span> - iY / <span class="number">100</span> + iY / <span class="number">400</span>) % <span class="number">7</span>;</span><br><span class="line"><span class="keyword">switch</span> (iWeekDay)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">case</span> <span class="number">0</span>: <span class="keyword">return</span> <span class="string">"周日"</span>; <span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">case</span> <span class="number">1</span>: <span class="keyword">return</span> <span class="string">"周一"</span>; <span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">case</span> <span class="number">2</span>: <span class="keyword">return</span> <span class="string">"周二"</span>; <span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">case</span> <span class="number">3</span>: <span class="keyword">return</span> <span class="string">"周三"</span>; <span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">case</span> <span class="number">4</span>: <span class="keyword">return</span> <span class="string">"周四"</span>; <span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">case</span> <span class="number">5</span>: <span class="keyword">return</span> <span class="string">"周五"</span>; <span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">case</span> <span class="number">6</span>: <span class="keyword">return</span> <span class="string">"周六"</span>; <span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">default</span>: <span class="keyword">return</span> <span class="literal">NULL</span>; <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">time_t</span> timep;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tm</span> * <span class="title">p</span>;</span></span><br><span class="line">time(&amp;timep);</span><br><span class="line">p = gmtime(&amp;timep);</span><br><span class="line"><span class="comment">//printf("%d\n", p-&gt;tm_sec); /*获取当前秒*/</span></span><br><span class="line"><span class="comment">//printf("%d\n", p-&gt;tm_min); /*获取当前分*/</span></span><br><span class="line"><span class="comment">//printf("%d\n", 8 + p-&gt;tm_hour);/*获取当前时,这里获取西方的时间,刚好相差八个小时*/</span></span><br><span class="line"><span class="comment">//printf("%d\n", p-&gt;tm_mday);/*获取当前月份日数,范围是1-31*/</span></span><br><span class="line"><span class="comment">//printf("%d\n", 1 + p-&gt;tm_mon);/*获取当前月份,范围是0-11,所以要加1*/</span></span><br><span class="line"><span class="comment">//printf("%d\n", 1900 + p-&gt;tm_year);/*获取当前年份,从1900开始，所以要加1900*/</span></span><br><span class="line"><span class="comment">//printf("%d\n", p-&gt;tm_yday); /*从今年1月1日算起至今的天数，范围为0-365*/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%d年%d月%d日%d时%d分%d秒,是今年的第%d天.\n"</span>, <span class="number">1900</span> + p-&gt;tm_year, <span class="number">1</span> + p-&gt;tm_mon, p-&gt;tm_mday, <span class="number">8</span> + p-&gt;tm_hour, p-&gt;tm_min, p-&gt;tm_sec,  p-&gt;tm_yday);<span class="comment">/*获取当前年份,从1900开始，所以要加1900*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//W= (d+2*m+3*(m+1)/5+y+y/4-y/100+y/400) % 7</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> *t = getWeekdayByYearday(<span class="number">1900</span> + p-&gt;tm_year, <span class="number">1</span> + p-&gt;tm_mon, p-&gt;tm_mday);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"今天是  : %s\n"</span>, t);</span><br><span class="line">getchar();</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果:"></a>运行结果:</h4><p><img src="/" class="lazyload" data-src="http://q8rm6bk4c.bkt.clouddn.com/blog/20200414/m4InzzGUGDWN.png?imageslim"  alt="运行结果"></p><h5 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料:"></a>参考资料:</h5><p>时间获取:<a href="https://blog.csdn.net/u012229282/article/details/79598287" target="_blank" rel="noopener">https://blog.csdn.net/u012229282/article/details/79598287</a></p><p>基姆拉尔森计算公式:<a href="https://www.cnblogs.com/fengbohello/p/3264300.html" target="_blank" rel="noopener">https://www.cnblogs.com/fengbohello/p/3264300.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;C语言-基姆拉尔森计算公式&quot;&gt;&lt;a href=&quot;#C语言-基姆拉尔森计算公式&quot; class=&quot;headerlink&quot; title=&quot;[C语言]基姆拉尔森计算公式&quot;&gt;&lt;/a&gt;[C语言]基姆拉尔森计算公式&lt;/h1&gt;&lt;h3 id=&quot;主题-读取系统时间并判断周几-判断周几
+      
+    
+    </summary>
+    
+    
+      <category term="C语言" scheme="http://www.fangmingxuan.com/categories/C%E8%AF%AD%E8%A8%80/"/>
+    
+    
+      <category term="算法" scheme="http://www.fangmingxuan.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="C语言" scheme="http://www.fangmingxuan.com/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://www.fangmingxuan.com/2020/04/13/hello-world/"/>
+    <id>http://www.fangmingxuan.com/2020/04/13/hello-world/</id>
+    <published>2020-04-13T04:46:46.000Z</published>
+    <updated>2020-04-18T16:55:49.990Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+</feed>
