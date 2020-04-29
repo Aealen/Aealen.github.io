@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.fangmingxuan.com/"/>
-  <updated>2020-04-28T06:38:12.107Z</updated>
+  <updated>2020-04-29T07:46:01.010Z</updated>
   <id>http://www.fangmingxuan.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>T3sec 学习笔记—–第一讲:信息收集</title>
+    <link href="http://www.fangmingxuan.com/2020/04/t3sec%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://www.fangmingxuan.com/2020/04/t3sec%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2020-04-29T05:32:26.647Z</published>
+    <updated>2020-04-29T07:46:01.010Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="T3SEC-—–第一讲-信息收集"><a href="#T3SEC-—–第一讲-信息收集" class="headerlink" title="T3SEC —–第一讲:信息收集"></a>T3SEC —–第一讲:信息收集</h1>    <div id="aplayer-YPvMQwmv" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="2111364820" data-server="tencent" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#FF4081"    ></div><ul><li><p>定一两个研究方向</p></li><li><p>多刷题,多练习,找思路    <strong>渗透师</strong></p><ul><li>1.本地靶场: <ul><li>sql-labs</li><li>DVMA</li><li>metasploitable3</li><li>upload-labs</li></ul></li><li>2.国内CTF<ul><li>实验吧</li><li>XCTF实训实训平台</li><li>安恒周</li><li>南京邮电大学CTF/网络实训攻防平台</li><li>BugkuCFT</li></ul></li><li>3.国外CTF<ul><li>Root-me</li><li>CTF365</li></ul></li><li>4.漏洞复现<ul><li>Vulhub</li></ul></li><li>5.SRC平台</li></ul></li><li><p>了解Flag一般在什么地方</p><ul><li>数据库表中</li><li>前端代码</li><li>后台</li><li>系统存储</li></ul></li></ul><h2 id="环境及工具准备"><a href="#环境及工具准备" class="headerlink" title="环境及工具准备"></a>环境及工具准备</h2><ul><li><p>平台:</p><ul><li>虚拟机</li><li>kali</li><li>悬剑 </li><li>etc….</li></ul></li><li><p>工具包:</p><ul><li>burpsuite    //抓包分析</li><li>菜刀/蚁剑/webshell      //一句话后门    </li><li>wires hark    no.1   //网络协议包分析</li><li>fiddler 2      //http数据包抓取工具</li><li>python2.x/3.x</li><li>sqlmap       sql漏洞注入工具’    WAF—–tamper  或者手工注入/绕过</li><li>hxd     内核查看器</li><li>隐写<ul><li>sergsolve    //破解色到隐写 ,需要java环境</li><li>Audacity   //音频隐写</li><li>outguess  //开源隐写C语言</li></ul></li><li>逆向  :IDA,OLLdbg ,windbg</li><li>御剑后台</li><li>nmap  —–script脚本 (python ruby等语言)</li><li>DirBuster</li><li></li><li>Appscan ,AWVA – web漏洞自动检测工具</li><li>wpscan –发现目标web指纹wordpress</li><li>Nessus.OpenVAS等      主机漏洞 根据漏洞</li><li>Msf(metstaploit)  注意就是渗透模块,没有的话请自行下载或编写exp及加载</li><li>hydra  – 密码爆破</li><li>ZIpperello  – zip爆破工具</li><li>ARPR –支持明文攻击   爆破ZIP</li><li>putty/mobaxterm /serecrt 等</li><li>编码工具<ul><li>Base编码</li><li>HEx编码,哈希计算,SEs加密  ,进制转换.AES加密,等</li></ul></li><li>CTF算法<ul><li>凯撒密码 </li><li>位偏移密码 </li><li>培根密码</li><li>希尔密码</li><li>等</li></ul></li><li>杂项<ul><li>XXenode    UUencode 等</li></ul></li><li>常见编码<ul><li>URL编码</li><li>Base编码</li><li>unicode编码 等</li></ul></li><li>C段旁注工具</li><li>在线编译   C/C++   PYTHON JAVA PHP GO VB等</li><li>内网穿透: frp  sunny-ngrok  ssocks</li></ul></li></ul><h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集:"></a>信息收集:</h2><h3 id="1-服务器类型–平台-版本"><a href="#1-服务器类型–平台-版本" class="headerlink" title="1.服务器类型–平台,版本"></a>1.服务器类型–平台,版本</h3><ul><li>1.nmap扫描 (kali)      -o 探测系统类型   -sV<ul><li>nmap -o ip  探测系统类型</li><li>nmap-sV ip   探测服务类型</li><li>…</li><li>状态state<ul><li>open–开放   </li><li>closed–关闭</li><li>filtered–呗防火墙\ids\ips等屏蔽 ,无法确定状态</li><li>unfiltered 没有被屏蔽</li><li>等…….</li><li>注意:目标是否开启防火墙</li></ul></li></ul></li><li>2.owasp ZAP </li></ul><h3 id="2-网站容器–iis-apache-ngnix-tomcat"><a href="#2-网站容器–iis-apache-ngnix-tomcat" class="headerlink" title="2.网站容器–iis,apache,ngnix,tomcat"></a>2.网站容器–iis,apache,ngnix,tomcat</h3><ul><li>1.whatweb 工具</li><li>2.nmap -sV ……等</li></ul><h3 id="3-脚本类型-–-ASP-PHP-JSP-ASPX等"><a href="#3-脚本类型-–-ASP-PHP-JSP-ASPX等" class="headerlink" title="3.脚本类型 – ASP.PHP .JSP.ASPX等"></a>3.脚本类型 – ASP.PHP .JSP.ASPX等</h3><ul><li>呈现页面后直接根据页面判断</li><li>目录爆破 dirbuster</li><li>site:ip/页面  filetype:?php|jsp|asp</li></ul><h3 id="4-数据库类型–access-sqlserver-mysql-oracle-postgresql等"><a href="#4-数据库类型–access-sqlserver-mysql-oracle-postgresql等" class="headerlink" title="4.数据库类型–access,sqlserver,mysql,oracle,postgresql等"></a>4.数据库类型–access,sqlserver,mysql,oracle,postgresql等</h3><ul><li>sqlmap,nmap</li><li>常见搭配:<ul><li>php—mysql.postgresql</li><li>ASP和ASPX –access,sqlserver</li><li>JSP–mysql ,oracle</li></ul></li></ul><h3 id="5-CMS网站内容管理系统-content-manage-system"><a href="#5-CMS网站内容管理系统-content-manage-system" class="headerlink" title="5.CMS网站内容管理系统 content manage system"></a>5.CMS网站内容管理系统 content manage system</h3><h4 id="常见cms"><a href="#常见cms" class="headerlink" title="常见cms:"></a>常见cms:</h4><ul><li>织梦(dedecms) CMS</li><li>dizcuz</li><li>phpweb</li><li>phpcms</li><li>帝国</li><li>ASPCMS</li><li>WORDPRESS(前几次CTF都用到)</li><li>…..</li></ul><h4 id="工具"><a href="#工具" class="headerlink" title="工具:"></a>工具:</h4><ul><li>御剑web指纹识别</li><li>whatweb</li><li>椰树等</li></ul><h3 id="6-waf–安全狗-安全狗的设置方式-找到绕过方式"><a href="#6-waf–安全狗-安全狗的设置方式-找到绕过方式" class="headerlink" title="6.waf–安全狗,安全狗的设置方式,找到绕过方式."></a>6.waf–安全狗,安全狗的设置方式,找到绕过方式.</h3><h3 id="7-网站目录的后台"><a href="#7-网站目录的后台" class="headerlink" title="7.网站目录的后台"></a>7.网站目录的后台</h3><h4 id="工具-1"><a href="#工具-1" class="headerlink" title="工具:"></a>工具:</h4><ul><li>字典爆破 dirb <a href="http://ip" target="_blank" rel="noopener">http://ip</a></li><li>DIRbuster 目录爆破</li><li>wwwscan</li><li>御剑后台</li></ul><h3 id="8-敏感信息"><a href="#8-敏感信息" class="headerlink" title="8.敏感信息"></a>8.敏感信息</h3><ul><li>后台目录.弱口令(自备字典).万能密码</li><li>安装包: install文件</li><li>上传目录:上传webshell 上传图片马等</li><li>网站根目录</li><li>数据库管理接口:弱口令(九头蛇).脱库,拿shell</li><li>安装页面:install.php 二次安装绕过</li><li>phpinfo.php  探针</li><li>robots.txt 文件</li></ul><h3 id="9-旁站和C段"><a href="#9-旁站和C段" class="headerlink" title="9.旁站和C段"></a>9.旁站和C段</h3><p>—-主站不好入侵,去找同服务器的其他web–拿下webshell-拿到服务器控制权再拿下主站.</p><ul><li><p>c段 在同一个网段: 192.168.1.0/24 ,web192.168.1.1 c段的其他pc在192.168.1.2~192.168.1.254范围内</p></li><li><p>nmap,msf+nmap</p></li></ul><h3 id="10-漏洞挖掘"><a href="#10-漏洞挖掘" class="headerlink" title="10.漏洞挖掘"></a>10.漏洞挖掘</h3><ul><li>系统主机 nessusd   默认端口为8834  \open VAS\XSCAN</li><li>Web漏洞: AVWS\Burp\OWASP ZAP\ WPSCAN \APPSCAN</li><li>浏览器 –建议火狐老板最好 mantraportable(内核还是火狐)集合了很多插件</li></ul><h3 id="11-一定记住常用端口号"><a href="#11-一定记住常用端口号" class="headerlink" title="11.一定记住常用端口号"></a>11.一定记住常用端口号</h3><p>21/22/69/139    文件共享服务端口</p><p>22/23/3389   远程端口</p><p>80/443/8080   web应用</p><p>7001/7002 weblogic</p><p>3306 mysql</p><p>1443 mssql</p><p>1521 oracle</p><p>6379 redis</p><p>25 /110  /143(IMap)  邮件</p><p>543  DNS     dns劫持,缓存投毒,欺骗 </p><p>67/68 HDCP欺骗劫持</p><p>等……</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+    
+      <category term="信息安全" scheme="http://www.fangmingxuan.com/categories/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"/>
+    
+    
+      <category term="t3sec" scheme="http://www.fangmingxuan.com/tags/t3sec/"/>
+    
+      <category term="信息安全" scheme="http://www.fangmingxuan.com/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"/>
+    
+      <category term="CTF" scheme="http://www.fangmingxuan.com/tags/CTF/"/>
+    
+  </entry>
   
   <entry>
     <title>前端开发学习笔记—–CSS</title>
