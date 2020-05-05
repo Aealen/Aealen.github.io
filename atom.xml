@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.fangmingxuan.com/"/>
-  <updated>2020-04-30T08:02:08.439Z</updated>
+  <updated>2020-05-05T07:22:52.692Z</updated>
   <id>http://www.fangmingxuan.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用windows server 2016 组建 nas</title>
+    <link href="http://www.fangmingxuan.com/2020/05/winserver%202016%E7%BB%84%E5%BB%BAnas/"/>
+    <id>http://www.fangmingxuan.com/2020/05/winserver%202016%E7%BB%84%E5%BB%BAnas/</id>
+    <published>2020-05-05T07:03:43.692Z</published>
+    <updated>2020-05-05T07:22:52.692Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="使用windows-server-2016-组建-nas"><a href="#使用windows-server-2016-组建-nas" class="headerlink" title="使用windows server 2016 组建 nas"></a>使用windows server 2016 组建 nas</h1>    <div id="aplayer-eqvSGpNt" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="2111364820" data-server="tencent" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#FF4081"    ></div><p>Q:为什么使用 windows server 2016 ?</p><p>A:相对于freenas ,黑裙等纯nas系统,windows server 更自由,可以实现nas需求的同时来做其他的事情,至于做什么,看个人需求.</p><p>windows server 2016 的下载地址: <a href="https://msdn.itellyou.cn/" target="_blank" rel="noopener">MSDN</a></p><p>安装过程就 省略了,可以参照其他windows系统安装.</p><h2 id="一-开启远程桌面功能开启远程桌面功能，这样在我的主力机上就可以直接操控这台NAS了。网上也有相关的文档。"><a href="#一-开启远程桌面功能开启远程桌面功能，这样在我的主力机上就可以直接操控这台NAS了。网上也有相关的文档。" class="headerlink" title="一.开启远程桌面功能开启远程桌面功能，这样在我的主力机上就可以直接操控这台NAS了。网上也有相关的文档。"></a>一.开启远程桌面功能开启远程桌面功能，这样在我的主力机上就可以直接操控这台NAS了。网上也有相关的文档。</h2><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505002315359.png"  alt="image-20200505002315359"></p><h2 id="二-添加everyone和guest账号的所有读写权限，这样就可以在局域网内访问共享的文件夹啦"><a href="#二-添加everyone和guest账号的所有读写权限，这样就可以在局域网内访问共享的文件夹啦" class="headerlink" title="二.添加everyone和guest账号的所有读写权限，这样就可以在局域网内访问共享的文件夹啦."></a>二.添加everyone和guest账号的所有读写权限，这样就可以在局域网内访问共享的文件夹啦.</h2><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505131223894.png"  alt="image-20200505131223894"></p><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505131232133.png"  alt="image-20200505131232133"></p><h2 id="三-samba"><a href="#三-samba" class="headerlink" title="三.samba"></a>三.samba</h2><h3 id="1-安装文件服务器资源管理器"><a href="#1-安装文件服务器资源管理器" class="headerlink" title="1.安装文件服务器资源管理器"></a>1.安装文件服务器资源管理器</h3><ul><li>在仪表盘中找到”<strong>添加角色功能</strong>“后下一步.</li></ul><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505133832392.png"  alt="image-20200505133832392"></p><ul><li><strong>服务器选择</strong></li></ul><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505133943341.png"  alt="image-20200505133943341"></p><ul><li>找到<strong>文件服务器资源管理器</strong> 点击后,<strong>添加功能</strong></li></ul><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505134051422.png"  alt="image-20200505134051422"></p><ul><li><strong>文件资源管理器</strong>打勾后 <strong>下一步</strong></li></ul><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505134213502.png"  alt="image-20200505134213502"></p><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505134300887.png"  alt="image-20200505134300887"></p><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505134336446.png"  alt="image-20200505134336446"></p><ul><li><strong>等待安装完成</strong>,完成后开始下一步 <strong>搭建SMB共享</strong></li></ul><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505134509660.png"  alt="image-20200505134509660"></p><h3 id="2-开始搭建SMB共享"><a href="#2-开始搭建SMB共享" class="headerlink" title="2.开始搭建SMB共享"></a>2.开始搭建SMB共享</h3><ul><li>仪表盘中点击 <strong>文件和存储服务</strong></li></ul><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505134725495.png"  alt="image-20200505134725495"></p><ul><li>找到<strong>共享</strong>后,<strong>右键</strong> <strong>新建共享</strong></li></ul><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505134815807.png"  alt="image-20200505134815807"></p><ul><li>选择 <strong>SMB共享 -高级</strong> ,下一步</li></ul><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505134858550.png"  alt="image-20200505134858550"></p><ul><li>选择路径</li></ul><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505135000937.png"  alt="image-20200505135000937"></p><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505135042097.png"  alt="image-20200505135042097"></p><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505135137487.png"  alt="image-20200505135137487"></p><h3 id="3-权限设定——-重要"><a href="#3-权限设定——-重要" class="headerlink" title="3.权限设定——-重要!!!!!!"></a>3.权限设定——-重要!!!!!!</h3><p><img src="/" class="lazyload" data-src="upload%5Cimage-20200505135222216.png"  alt="image-20200505135222216"></p><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505135354015.png"  alt="image-20200505135354015"></p><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505135509921.png"  alt="image-20200505135509921"></p><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505140003683.png"  alt="image-20200505140003683"></p><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505140134513.png"  alt="image-20200505140134513"></p><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505140203519.png"  alt="image-20200505140203519"></p><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505140221661.png"  alt="image-20200505140221661"></p><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505140237138.png"  alt="image-20200505140237138"></p><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505140255502.png"  alt="image-20200505140255502"></p><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505140315993.png"  alt="image-20200505140315993"></p><p>4.完成</p><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505141008470.png"  alt="image-20200505141008470"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+    
+      <category term="nas" scheme="http://www.fangmingxuan.com/categories/nas/"/>
+    
+    
+      <category term="nas" scheme="http://www.fangmingxuan.com/tags/nas/"/>
+    
+      <category term="winserver" scheme="http://www.fangmingxuan.com/tags/winserver/"/>
+    
+  </entry>
   
   <entry>
     <title>T3sec 学习笔记—–第二讲:企业综合渗透讲解</title>
