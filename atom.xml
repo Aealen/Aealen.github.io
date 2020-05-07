@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.fangmingxuan.com/"/>
-  <updated>2020-05-06T06:21:26.144Z</updated>
+  <updated>2020-05-07T10:46:47.285Z</updated>
   <id>http://www.fangmingxuan.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>T3sec 学习笔记—–第三讲:web应用安全</title>
+    <link href="http://www.fangmingxuan.com/2020/05/t3sec%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%B8%89%E8%AE%B2/"/>
+    <id>http://www.fangmingxuan.com/2020/05/t3sec%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%B8%89%E8%AE%B2/</id>
+    <published>2020-05-07T10:21:38.633Z</published>
+    <updated>2020-05-07T10:46:47.285Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="T3SEC-—–第三讲-web应用安全"><a href="#T3SEC-—–第三讲-web应用安全" class="headerlink" title="T3SEC —–第三讲:web应用安全"></a>T3SEC —–第三讲:web应用安全</h1>    <div id="aplayer-WpyMuwja" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="2111364820" data-server="tencent" data-type="playlist" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="200px" data-preload="auto" data-theme="#FF4081"    ></div><p>OWASP–Open Web Application Security Project 组织.开源.    —会员   发送邮件到<a href="mailto:member@owasp.org.cn">member@owasp.org.cn</a>即可参加.</p><p>ISC—CISSP  </p><h3 id="OWASP-Top10-10大应用安全风险"><a href="#OWASP-Top10-10大应用安全风险" class="headerlink" title="OWASP Top10(10大应用安全风险)"></a>OWASP Top10(10大应用安全风险)</h3><p>1.注入</p><p>2.失效的身份认证和会话管理</p><p>3.XSS -跨站脚本攻击</p><p>4.不安全的对象直接引用</p><p>5.CSRF –跨站请求伪造</p><p>6.安全的错误配置</p><p>7.限制URL访问失败</p><p>8.未验证的重定向转发</p><p>9.应用已知的漏洞组件</p><p>10.敏感信息泄露</p><h1 id="一-SQL注入漏洞"><a href="#一-SQL注入漏洞" class="headerlink" title="一.SQL注入漏洞"></a>一.SQL注入漏洞</h1><h2 id="1-原理"><a href="#1-原理" class="headerlink" title="1.原理:"></a>1.原理:</h2><h2 id="2-流程"><a href="#2-流程" class="headerlink" title="2.流程:"></a>2.流程:</h2><ul><li>注入点探测<ul><li>自动探测-WEB漏扫工具 ,  AWVS APPSCAN OPENVAS nessus OWASP ZAP .Burpsuite</li><li>手动探测–手工构造payload</li></ul></li><li>信息获取<ul><li>环境信息:数据库类型,数据库版本,操作系统类型版本,用户信息</li><li>数据库信息:库民,表名,字段名,数据值—(后台管理员账户密码)</li></ul></li><li>获取权限<ul><li>获取操作系统权限,通过执行shell,上传大马或者小马</li></ul></li></ul><h2 id="3-探测方法"><a href="#3-探测方法" class="headerlink" title="3.探测方法"></a>3.探测方法</h2><ul><li>sqlmap工具<ul><li>五种注入类型</li><li>盲注</li><li>联合注入</li><li>二次注入</li><li>堆叠</li><li>xxx</li></ul></li><li>手工<ul><li>整型</li><li>$=”select * from users where name=$name and pass = $pass”;</li><li>$=”select * from users where name= or 1=1       # and pass = $pass”;= select *fro users;</li><li>字符型</li><li>$=”select * from users where name=’’$name’ and pass = ‘$pass’ “;</li><li>$=”select * from users where name=’ ‘  or ‘1’=’1’ #’’ and pass = $pass”;</li><li>搜索型</li><li>$=”select * from users where password like ‘%’ or 1=1 and ‘%’=’%’ order by password ;</li></ul></li></ul><h4 id="sqlmap需要python环境"><a href="#sqlmap需要python环境" class="headerlink" title="sqlmap需要python环境"></a>sqlmap需要python环境</h4><h3 id="sql常用用法"><a href="#sql常用用法" class="headerlink" title="sql常用用法"></a>sql常用用法</h3><p>sqlmap - u url地址/参数=值 –dbs       爆库爆表</p><p>sqlmap - u url地址/参数=值 –os  -shell      获取shell</p><p>sqlmap - u url地址/参数=值 –level 5 -risk=4   四个风险级别 五个优先级</p><p>sqlmap - u url地址/参数=值  –file-read  “C:\1.sh”读取文件</p><p>sqlmap - u url地址/参数=值  –file-write shell.php –file-dest “C:\www\XXXXX”</p><h2 id="4-建议下载安全狗-设置绕过练习"><a href="#4-建议下载安全狗-设置绕过练习" class="headerlink" title="4.建议下载安全狗,设置绕过练习"></a>4.建议下载安全狗,设置绕过练习</h2><p>tamper脚本 –python基础编程,协议分析,数据库语法及编程,SQL注入漏洞原理</p><h1 id="二-XSS-跨站脚本-铁三赛中不会体现"><a href="#二-XSS-跨站脚本-铁三赛中不会体现" class="headerlink" title="二.XSS-跨站脚本(铁三赛中不会体现)"></a>二.XSS-跨站脚本(铁三赛中不会体现)</h1><h1 id="三-上传漏洞-必考"><a href="#三-上传漏洞-必考" class="headerlink" title="三.上传漏洞(必考)"></a>三.上传漏洞(必考)</h1>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+    
+      <category term="信息安全" scheme="http://www.fangmingxuan.com/categories/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"/>
+    
+    
+      <category term="t3sec" scheme="http://www.fangmingxuan.com/tags/t3sec/"/>
+    
+      <category term="信息安全" scheme="http://www.fangmingxuan.com/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"/>
+    
+      <category term="CTF" scheme="http://www.fangmingxuan.com/tags/CTF/"/>
+    
+  </entry>
   
   <entry>
     <title>windows本地靶场--Sqli-Labs(环境搭建)</title>
