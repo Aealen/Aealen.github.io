@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.fangmingxuan.com/"/>
-  <updated>2020-05-10T06:13:21.171Z</updated>
+  <updated>2020-05-10T09:38:03.972Z</updated>
   <id>http://www.fangmingxuan.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>T3sec 学习笔记—–第六讲:webshell提权</title>
+    <link href="http://www.fangmingxuan.com/2020/05/T3sec%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%93%E7%AC%AC%E5%85%AD%E8%AE%B2-webshell%E6%8F%90%E6%9D%83/"/>
+    <id>http://www.fangmingxuan.com/2020/05/T3sec%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%93%E7%AC%AC%E5%85%AD%E8%AE%B2-webshell%E6%8F%90%E6%9D%83/</id>
+    <published>2020-05-10T08:39:46.244Z</published>
+    <updated>2020-05-10T09:38:03.972Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="T3SEC-—–第六讲-webshell提权"><a href="#T3SEC-—–第六讲-webshell提权" class="headerlink" title="T3SEC —–第六讲:webshell提权"></a>T3SEC —–第六讲:webshell提权</h1>    <div id="aplayer-ZHfqUBEx" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="2111364820" data-server="tencent" data-type="playlist" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="200px" data-preload="auto" data-theme="#FF4081"    ></div><p>phpmyadmin getshell到提权</p><h1 id="一-环境准备"><a href="#一-环境准备" class="headerlink" title="一.环境准备:"></a>一.环境准备:</h1><p>靶机:win7 32位</p><p>环境:</p><p>php:5.45</p><p>mysql:5.5.53</p><p>Apache:2.43</p><h1 id="二-开始攻击"><a href="#二-开始攻击" class="headerlink" title="二.开始攻击"></a>二.开始攻击</h1><p>访问发现3306端口打开.经过弱口令,爆破,目录泄露等途径已经获知phpmyadmin的账号密码是root  root</p><h2 id="1-开始登陆到phpmyadmin"><a href="#1-开始登陆到phpmyadmin" class="headerlink" title="1.开始登陆到phpmyadmin"></a>1.开始登陆到phpmyadmin</h2><p>注意大小写 中英文标点符号  格式</p><h2 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h2><p>show  variables like ‘ value’  <strong>查询variables</strong> </p><p><strong>写入修改内容</strong></p><ul><li>select …. = .. </li><li>set … =… </li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+    
+      <category term="信息安全" scheme="http://www.fangmingxuan.com/categories/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"/>
+    
+    
+      <category term="t3sec" scheme="http://www.fangmingxuan.com/tags/t3sec/"/>
+    
+      <category term="信息安全" scheme="http://www.fangmingxuan.com/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"/>
+    
+      <category term="CTF" scheme="http://www.fangmingxuan.com/tags/CTF/"/>
+    
+  </entry>
   
   <entry>
     <title>T3sec 学习笔记—–第五讲:webshell上传</title>
