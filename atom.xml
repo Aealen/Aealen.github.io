@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.fangmingxuan.com/"/>
-  <updated>2020-05-17T07:51:42.716Z</updated>
+  <updated>2020-05-17T08:13:53.363Z</updated>
   <id>http://www.fangmingxuan.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>T3sec 学习笔记—–第十讲-服务器安全加固</title>
+    <link href="http://www.fangmingxuan.com/2020/05/T3sec%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%93%E7%AC%AC%E5%8D%81%E8%AE%B2-%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E5%85%A8%E5%8A%A0%E5%9B%BA/"/>
+    <id>http://www.fangmingxuan.com/2020/05/T3sec%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%93%E7%AC%AC%E5%8D%81%E8%AE%B2-%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E5%85%A8%E5%8A%A0%E5%9B%BA/</id>
+    <published>2020-05-17T07:58:11.414Z</published>
+    <updated>2020-05-17T08:13:53.363Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="T3SEC-—–第十讲-服务器安全加固"><a href="#T3SEC-—–第十讲-服务器安全加固" class="headerlink" title="T3SEC —–第十讲:服务器安全加固"></a>T3SEC —–第十讲:服务器安全加固</h1>    <div id="aplayer-jhjdDVoY" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="2111364820" data-server="tencent" data-type="playlist" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="200px" data-preload="auto" data-theme="#FF4081"    ></div><h3 id="长城网络靶场竞技系统"><a href="#长城网络靶场竞技系统" class="headerlink" title="长城网络靶场竞技系统"></a>长城网络靶场竞技系统</h3><h3 id="实验吧"><a href="#实验吧" class="headerlink" title="实验吧"></a>实验吧</h3><h3 id="ctf训练营"><a href="#ctf训练营" class="headerlink" title="ctf训练营"></a>ctf训练营</h3><h1 id="各体系路线"><a href="#各体系路线" class="headerlink" title="各体系路线"></a>各体系路线</h1><ul><li>1.<strong>网络安全</strong>:协议分析,企业网络安全架构设计项目实战</li><li>2.<strong>系统安全</strong>:系统加固,入侵排查,应急响应</li><li>3<strong>.web安全编程</strong>:http,php,java,数据库安全</li><li>4<strong>.web渗透工具</strong>:工具,SRC，漏洞挖掘，代码审计，ｗｅｂ渗透测试项目实战　</li><li>５<strong>.渗透实战</strong>：主机渗透，内网渗透，python渗透编程,渗透测试项目实战</li><li>6.<strong>python黑帽子</strong>:python基础编程,python渗透实战,python编写poc实战</li><li><strong>7.逆向</strong>.<strong>二进制</strong>及CTF专项</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+    
+      <category term="信息安全" scheme="http://www.fangmingxuan.com/categories/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"/>
+    
+    
+      <category term="t3sec" scheme="http://www.fangmingxuan.com/tags/t3sec/"/>
+    
+      <category term="信息安全" scheme="http://www.fangmingxuan.com/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"/>
+    
+      <category term="CTF" scheme="http://www.fangmingxuan.com/tags/CTF/"/>
+    
+  </entry>
   
   <entry>
     <title>T3sec 学习笔记—–第九讲-内网转发穿透</title>
