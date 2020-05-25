@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.fangmingxuan.com/tags/index.html</loc>
+    
+    <lastmod>2020-05-25T02:01:41.116Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.fangmingxuan.com/categories/index.html</loc>
+    
+    <lastmod>2020-05-25T02:00:50.458Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.fangmingxuan.com/comment/index.html</loc>
     
     <lastmod>2020-05-25T01:53:09.491Z</lastmod>
@@ -208,20 +222,6 @@
     <loc>http://www.fangmingxuan.com/2048/index1.html</loc>
     
     <lastmod>2020-04-20T12:05:44.677Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.fangmingxuan.com/tags/index.html</loc>
-    
-    <lastmod>2020-04-19T15:26:18.495Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.fangmingxuan.com/categories/index.html</loc>
-    
-    <lastmod>2020-04-19T15:24:26.118Z</lastmod>
     
   </url>
   
