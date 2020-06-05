@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.fangmingxuan.com/"/>
-  <updated>2020-06-05T05:55:43.086Z</updated>
+  <updated>2020-06-05T06:19:39.517Z</updated>
   <id>http://www.fangmingxuan.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>T3SEC总结</title>
+    <link href="http://www.fangmingxuan.com/2020/06/T3sec%E6%80%BB%E7%BB%93/"/>
+    <id>http://www.fangmingxuan.com/2020/06/T3sec%E6%80%BB%E7%BB%93/</id>
+    <published>2020-06-05T06:18:24.822Z</published>
+    <updated>2020-06-05T06:19:39.517Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="T3SEC总结"><a href="#T3SEC总结" class="headerlink" title="T3SEC总结"></a>T3SEC总结</h1>    <div id="aplayer-brEAcAkx" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="2111364820" data-server="tencent" data-type="playlist" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="200px" data-preload="auto" data-theme="#FF4081"    ></div><h1 id="主题-揭秘黑客如何通过木马控制目标服务器-webshell"><a href="#主题-揭秘黑客如何通过木马控制目标服务器-webshell" class="headerlink" title="主题:揭秘黑客如何通过木马控制目标服务器-webshell"></a>主题:揭秘黑客如何通过木马控制目标服务器-webshell</h1><p><strong>学习前需要了解的内容</strong>:</p><ul><li>1.了解web的基础的原理(http协议…)</li><li>2.对安全工具有一定的了解(burpsuite.中国菜刀等)</li></ul><p>靶机:upload-labs</p><p>webshell是什么:其实就是一个网页木马</p><p><strong>分析:</strong></p><ul><li><p><strong>1.分析上传点:</strong> 这是一个js过滤,前端过滤,所有前端过滤都是不安全的.checkFile()这个函数进行了对文件后缀格式的一个限制<strong>pass01</strong></p></li><li><p><strong>2. 方法:</strong></p><ul><li><p>通过burpsuite绕过js前端验证过滤上传webshell</p></li><li><p>拦截代理:浏览器需要设置代理 ,—–Burpsuite设置</p></li><li><p>通过浏览器审计工具绕过JS 验证,上传webshell(前端知识有一定的了解)</p></li><li><p><strong>思路</strong>:关闭事件,删除调用函数,修改函数体里面的过滤策略等.</p></li><li><p><strong>中国菜刀连接上传的**</strong>webshell<strong>**控制目标服务器</strong></p></li><li><p>中国菜刀连接上传额webs hell控制目标服务器进行上传文件.下载文件,等其他权限的获取</p></li></ul></li></ul><h1 id="主题-揭秘黑客如何拿下目标最高权限"><a href="#主题-揭秘黑客如何拿下目标最高权限" class="headerlink" title="主题:揭秘黑客如何拿下目标最高权限"></a>主题:揭秘黑客如何拿下目标最高权限</h1><p>课程前言:</p><h2 id="1-论提权的重要性"><a href="#1-论提权的重要性" class="headerlink" title="1.论提权的重要性"></a><strong>1.论提权的重要性</strong></h2><ul><li>我们在渗透过程一般都会获得普通用户的权限,在获取系统某些关键信息的时候会受到权限的限制,因此作为安全渗透测试工程师,掌握提权是一项必备的重要技能.     </li></ul><h2 id="2-提权的分类"><a href="#2-提权的分类" class="headerlink" title="2.提权的分类"></a><strong>2.提权的分类</strong></h2><ul><li><p>数据库提权 </p></li><li><p>web提权</p></li><li><p>操作系统相关提权</p></li></ul><h2 id="3-本期课程内容"><a href="#3-本期课程内容" class="headerlink" title="3.本期课程内容:"></a><strong>3.</strong>本期课程内容:</h2><ul><li>主要讲UDF提权</li></ul><h2 id="4-学习本课程需要掌握哪些基础知识"><a href="#4-学习本课程需要掌握哪些基础知识" class="headerlink" title="4.学习本课程需要掌握哪些基础知识:"></a><strong>4.</strong>学习本课程需要掌握哪些基础知识:</h2><ul><li><p>数据库相关基础</p></li><li><p>操作系统基础</p></li><li><p>掌握一些web安全基础</p></li></ul><h2 id="5-环境-phpstudy"><a href="#5-环境-phpstudy" class="headerlink" title="5.环境:phpstudy"></a>5.<strong>环境:phpstudy</strong></h2><ul><li><p>mysql</p></li><li><p>apache</p></li><li><p>php解析器</p></li></ul><h2 id="6-数据库提权前提条件-已经获得数据库的用户名和密码"><a href="#6-数据库提权前提条件-已经获得数据库的用户名和密码" class="headerlink" title="6.数据库提权前提条件:已经获得数据库的用户名和密码*"></a>6.<strong>数据库提权前提条件</strong>:已经获得数据库的用户名和密码*</h2><ul><li><p>数据库的用户密码渗透:</p><ul><li><p>通过上传webshell到服务器–&gt;利用菜刀工具下载网站的连接数据库的文件 如何判断网站的哪一个文件是连接数据库的文件db_config.php</p></li><li><p>数据库用户名密码:用户名:root 密码:root</p></li></ul></li></ul><h2 id="7-数据库提权-利用数据库的UDF提权-User-Defined-Function-用户自定义函数"><a href="#7-数据库提权-利用数据库的UDF提权-User-Defined-Function-用户自定义函数" class="headerlink" title="7.数据库提权:**利用数据库的UDF提权(User Defined Function:用户自定义函数.)**"></a>7.<strong>数据库提权:**</strong>利用数据库的UDF提权(User Defined Function:用户自定义函数.)**</h2><ul><li><p>UDF提权属于版本提权,版本不同方法有一些小区别</p></li><li><p>区别在于生成udf文件保存的目录不一样 </p><ul><li><p>mysql&lt;5.1 –&gt;生成UDF路径可放在C:windows/system32/</p></li><li><p>mysql&gt;=5.1 –&gt; 生成udf(.dll)路径放在 mysql安装目录下的\lib\plugin目录下–&gt;如何通过数据库来找</p></li></ul></li><li><p>mysql&gt;select $$plugin_dir;</p></li><li><p>脚本自动生成</p></li></ul><h2 id="开始提权-提权脚本"><a href="#开始提权-提权脚本" class="headerlink" title="开始提权:提权脚本"></a><strong>开始提权:提权脚本</strong></h2><ul><li><p>利用提权脚本—-&gt;去生成udf文件</p></li><li><p>host:输入服务端主机名或服务器ip地址</p></li><li><p>name: 输入用户名</p></li><li><p>pass: 密码</p></li><li><p>dbname:数据库名字mysql安装好后默认</p></li><li><p>利用提权脚本—&gt;生成udf文件按(.dll) </p></li></ul><p><strong>select sys_eval(‘net user moon$ 123456 /add &amp; net localgroup administrators moon$ /add’)</strong> 创建moon$ 密码为123456 同时提升管理员权限</p><ul><li><p><strong>直接登录数据库进行提权</strong></p><ul><li><p><em>create function cmdshell returns string soname ‘moonudf.dll’;</em></p></li><li><p><em>select cmdshell(‘net user waitalone waitalone.cn /add’);</em></p></li><li><p><em>select cmdshell(‘net localgroup administrators waitalone /add’);</em></p></li></ul></li><li><p><strong>利用dos开启远程桌面服务</strong></p></li></ul><h2 id="信息安全提权分类"><a href="#信息安全提权分类" class="headerlink" title="信息安全提权分类"></a>信息安全提权分类</h2><ul><li><p>数据库提权:udf提权 mof提权 反弹端口连接提权</p></li><li><p>web安全提权: SQL注入提权,webshell提权,web中间件漏洞提权等</p></li><li><p>操作系统提权:系统内核溢出提权,错误的系统配置提权,组策略首选项提权,DLL劫持提权,第三方软件 /服务的提权 </p></li><li><p>安卓提权等</p></li></ul><h1 id="主题-寻找网站漏洞-漏洞挖掘"><a href="#主题-寻找网站漏洞-漏洞挖掘" class="headerlink" title="主题:寻找网站漏洞:漏洞挖掘"></a>主题:寻找网站漏洞:漏洞挖掘</h1><h2 id="渗透测试VS代码审计"><a href="#渗透测试VS代码审计" class="headerlink" title="渗透测试VS代码审计:"></a>渗透测试VS代码审计:</h2><ul><li><p><strong>渗透测试**</strong>(<strong><strong>黑盒测试</strong></strong>):**渗透测试的目标是一个黑盒子,我们并不关心软件产品内部的代码结构.我们只知道整个web站点发起一些参数提交,达到我们利用某个漏洞的额攻击效果.</p><ul><li><p><strong>特点</strong>:它能够相对于发现操作系统和网络服务宗全形的安全,而不仅仅是对web站点的漏洞挖掘</p></li><li><p><strong>注意</strong>:渗透测试不是真正意义的漏洞挖掘,他仅仅是通过探测或者验证的方式确定漏洞的可利用性.</p></li></ul></li><li><p><strong>代码审计**</strong>(<strong><strong>白盒测试</strong></strong>)**:是指有一定安全经验的相关人员,通过阅读开发文档或者网站的源代码,以自动化分析工具或者人工分析对应用程序进行深入分析.高效全面地发现系统代码的缺陷.或者开发人员不安全的编程习惯.并知道开发人员进行修复,保障应用系统的安全运行.</p><ul><li><strong>特点**</strong>:**更多是一个静态的代码审计,代码审计更加彻底发现代码风险.</li></ul></li><li><p><strong>渗透测试VS代码审计的关系</strong></p><ul><li><p>相互补充,相互强化.</p></li><li><p>代码审计发现问题,渗透测试确定可利用性.</p></li><li><p>渗透测试发现问题,代码审计确定成因.</p></li></ul></li></ul><h2 id="漏洞挖掘过程与方式"><a href="#漏洞挖掘过程与方式" class="headerlink" title="漏洞挖掘过程与方式:"></a>漏洞挖掘过程与方式:</h2><ul><li><p><strong>漏洞挖掘的过程:</strong></p><ul><li><p>代码审计准备(安全知识+代码审计工具)</p></li><li><p>采用的方式:自动化工具+人工</p></li><li><p>找到有漏洞的代码</p></li><li><p>最终给出修复方案,指导开发人员完善我们的应用系统.</p></li></ul></li><li><p><strong>工具漏洞的挖掘方式</strong></p><ul><li><p>优点:效率高</p></li><li><p>缺点:对漏洞存在误报</p></li></ul></li><li><p><strong>人工漏洞挖掘方式</strong></p><ul><li><p>优点:挖掘漏洞的精准</p></li><li><p>缺点:效率低下</p></li></ul></li><li><p><strong>人工+工具漏洞挖掘方式:结合工具和人工漏洞挖掘有点,相互补充,相互强化.</strong></p></li></ul><h2 id="学习本课程需要掌握的知识体系"><a href="#学习本课程需要掌握的知识体系" class="headerlink" title="学习本课程需要掌握的知识体系:"></a>学习本课程需要掌握的知识体系:</h2><ul><li><p>web安全体系知识(http协议原理,web安全top10漏洞,安全工具)</p></li><li><p>具备一定的语法基础(Html,CSS JS，ASP，<strong>PHP</strong>,JSP),以及代码的调试</p></li><li><p>掌握常用的数据库(<strong>Mysql</strong>,Oracle,Sqlserver等等)</p></li><li><p>对开发语言的框架知识有一定的了解,MVC(Model View Controller),SSM(Spring Struts Mybatis),SSH(Spring Struts Hibernate)等等</p></li></ul><p><strong>seay主要审计php语言 fortify:java语言</strong></p><h1 id="主题-获取管理员账号密码-窃取cookie"><a href="#主题-获取管理员账号密码-窃取cookie" class="headerlink" title="主题:获取管理员账号密码-窃取cookie"></a>主题:获取管理员账号密码-窃取cookie</h1><p><strong>回顾</strong>:</p><ul><li><p>渗透测试vs代码审计:</p><ul><li><p>渗透测试VS代码审计</p></li><li><p>代码审计及特点</p></li><li><p>渗透测试vs代码审计关系</p></li></ul></li><li><p>漏洞挖掘方式</p><ul><li><p>漏洞挖掘过程</p></li><li><p>漏洞挖掘方式 </p></li></ul></li><li><p>seay代码审计使用 </p></li></ul><h2 id="论XSS漏洞的重要性"><a href="#论XSS漏洞的重要性" class="headerlink" title="论XSS漏洞的重要性"></a>论XSS漏洞的重要性</h2><ul><li>关联web安全之XSS体系化课程里面的内容.</li></ul><h2 id="XSS体系知识"><a href="#XSS体系知识" class="headerlink" title="XSS体系知识:"></a>XSS体系知识:</h2><ul><li>XSS漏洞原理与检测机制</li><li><strong>XSS反射型.存储型.DOM型</strong></li><li>XSS漏洞针对客户端(获取cookie,转发邮件,放马,刷流量)</li><li>XSS漏洞针对服务端(劫持后台,篡改页面,蠕虫,内网扫描)</li><li>XSS漏洞绕过编码技术</li><li>XSS漏洞ｆｕｚｚｉｎｇ　Ｘｓｓｅｒ模糊测试</li><li>XSS漏洞开发与漏洞修复</li><li>arc-xss漏洞需求分析</li><li>aec-xss漏洞挖掘过程</li><li>arc-xss漏洞挖掘利用</li><li>aec-xss漏洞挖掘验证</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+    
+      <category term="信息安全" scheme="http://www.fangmingxuan.com/categories/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"/>
+    
+    
+      <category term="t3sec" scheme="http://www.fangmingxuan.com/tags/t3sec/"/>
+    
+      <category term="信息安全" scheme="http://www.fangmingxuan.com/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"/>
+    
+      <category term="CTF" scheme="http://www.fangmingxuan.com/tags/CTF/"/>
+    
+  </entry>
   
   <entry>
     <title>SQLMAP指令</title>
@@ -581,36 +611,6 @@
       <category term="nas" scheme="http://www.fangmingxuan.com/tags/nas/"/>
     
       <category term="winserver" scheme="http://www.fangmingxuan.com/tags/winserver/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>T3sec 学习笔记—–第二讲:企业综合渗透讲解</title>
-    <link href="http://www.fangmingxuan.com/2020/04/T3sec%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%93%E7%AC%AC%E4%BA%8C%E8%AE%B2-%E4%BC%81%E4%B8%9A%E7%BB%BC%E5%90%88%E6%B8%97%E9%80%8F%E8%AE%B2%E8%A7%A3/"/>
-    <id>http://www.fangmingxuan.com/2020/04/T3sec%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%93%E7%AC%AC%E4%BA%8C%E8%AE%B2-%E4%BC%81%E4%B8%9A%E7%BB%BC%E5%90%88%E6%B8%97%E9%80%8F%E8%AE%B2%E8%A7%A3/</id>
-    <published>2020-04-29T07:47:08.745Z</published>
-    <updated>2020-05-06T10:44:06.155Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="T3SEC-—–第二讲-企业综合渗透讲解"><a href="#T3SEC-—–第二讲-企业综合渗透讲解" class="headerlink" title="T3SEC —–第二讲:企业综合渗透讲解"></a>T3SEC —–第二讲:企业综合渗透讲解</h1>    <div id="aplayer-YHCOSxfO" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="2111364820" data-server="tencent" data-type="playlist" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="200px" data-preload="auto" data-theme="#FF4081"    ></div><h2 id="信息安全铁人三项赛"><a href="#信息安全铁人三项赛" class="headerlink" title="信息安全铁人三项赛:"></a>信息安全铁人三项赛:</h2><ul><li>数据分析赛–比赛提供攻击发生现场的全流量数据包 主机日志向以及nrtflow日志</li><li>企业网络攻防赛–发现企业网络脆弱点并进行利用,获取”价值线索”</li><li>个人计算环境赛– 比赛提供有隆冬的环境或文件,进行漏洞挖掘与利用,获取”价值线索”….重点考试逆向及pwn能力.</li><li>Tips: 价值线索 即  Flag</li></ul><p><strong>数据分析赛</strong>:</p><p>后面讲解</p><p><strong>个人计算机环境赛</strong>–<strong>二进制漏洞挖掘</strong></p><p>后面讲解</p><h1 id="企业网络攻防-详细案例演示"><a href="#企业网络攻防-详细案例演示" class="headerlink" title="企业网络攻防-详细案例演示"></a>企业网络攻防-详细案例演示</h1><ul><li><p>熟悉wireshark的使用,</p></li><li><p>这个人频繁访问了哪个网站:统计-HTTP-请求(request) 出现频率最高—一级域名!!!!! 如 fangmingxuan.com而不是blog.fangmingxuan.com</p></li><li><p>这个人的源ip:TCP    发起request请求的source </p></li><li><p>黑客网站的地址:info中被挂马的.一般为上传下载了某文件且多数加密</p><ul><li>筛选 ip-addr == 地址 and http</li><li>准备各种编码器!!!!最好离线,比赛场内不一定有网络.<ul><li>url </li><li>burpsuite</li><li>hex</li><li>Unicode</li><li>等….</li></ul></li></ul></li><li><p>winHex工具</p></li><li><p>制造越界: \X00   free     堆溢出 栈溢出 等</p></li></ul><h2 id="思路"><a href="#思路" class="headerlink" title="思路:"></a>思路:</h2><p>1.找到对外发布的网站漏洞</p><p>2.利用漏洞拿到web的webshell</p><p>3.提权,提权到system权限   guest&lt;user&lt;administrator&lt;system</p><p>4.后门APT持续攻击(隐藏后门)</p><p>5.配置代理</p><p>6.旁站攻击—信息收集(msf/nmap)</p><p>7.内网渗透\域渗透</p><h2 id="flag一般放的位置"><a href="#flag一般放的位置" class="headerlink" title="flag一般放的位置:"></a>flag一般放的位置:</h2><p>1.网页的源码中</p><p>2.后台首页,文章</p><p>3.各种配置文件如httpd.conf\my.conf\等</p><p>4.Os系统里面(windows\桌面\c\www)(Linux\桌面,root,home./var/www/目录等)</p><p>5.数据库表中</p><h2 id="思考"><a href="#思考" class="headerlink" title="思考:"></a>思考:</h2><p>WAF–&gt;sqlmap  —<strong>tamper</strong>放着 或者 <strong>手工绕过WAF</strong></p><p>拿到网站–&gt;web漏洞入手,如果确实找不到网站漏洞–&gt;尝试收集系统信息(端口,服务类型) <strong>nmap</strong>–&gt;SRC平台一定要关注</p><p>–dbs 爆库   -D进入库   下面同理!</p><p>–tables 爆表</p><p>–Colum 爆数据</p><p>–os-shell后台shell</p><p>上传文件格式不对! 上传绕过!</p><ul><li>用.cer后缀先把文件上传服务器</li></ul><p>蚁剑,菜刀继续</p><p>巴西烤肉提权 拿到3380控制权,在控制权内找根目录里的flag</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
-      
-    
-    </summary>
-    
-    
-      <category term="信息安全" scheme="http://www.fangmingxuan.com/categories/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"/>
-    
-    
-      <category term="t3sec" scheme="http://www.fangmingxuan.com/tags/t3sec/"/>
-    
-      <category term="信息安全" scheme="http://www.fangmingxuan.com/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"/>
-    
-      <category term="CTF" scheme="http://www.fangmingxuan.com/tags/CTF/"/>
     
   </entry>
   
