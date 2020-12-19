@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.fangmingxuan.com/"/>
-  <updated>2020-11-23T09:12:23.603Z</updated>
+  <updated>2020-12-19T10:35:05.481Z</updated>
   <id>http://www.fangmingxuan.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据结构--出栈顺序</title>
+    <link href="http://www.fangmingxuan.com/2020/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84--%E6%A0%88/"/>
+    <id>http://www.fangmingxuan.com/2020/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84--%E6%A0%88/</id>
+    <published>2020-12-19T10:27:38.474Z</published>
+    <updated>2020-12-19T10:35:05.481Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="数据结构–出栈顺序"><a href="#数据结构–出栈顺序" class="headerlink" title="数据结构–出栈顺序"></a>数据结构–出栈顺序</h1><blockquote><p>近日在复习数据结构，看到栈的时候，发现1个元素进栈，有1种出栈顺序；2个元素进栈，有2种出栈顺序；3个元素进栈，有5种出栈顺序，那么一个很自然地问题就是n个元素进栈，共有多少种出栈顺序？</p></blockquote><blockquote><p>我们把n个元素的出栈个数的记为f(n), 那么对于1,2,3, 我们很容易得出：</p><p> f(1) = 1   //即 1</p><p>​                   f(2) = 2   //即 12、21</p><p>​                   f(3) = 5   //即 123、132、213、321、231</p><p>然后我们来考虑f(4), 我们给4个元素编号为a,b,c,d, 那么考虑：元素a只可能出现在1号位置，2号位置，3号位置和4号位置(很容易理解，一共就4个位置，比如abcd,元素a就在1号位置)。               </p></blockquote><h2 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h2><ul><li><p>1) 如元素a在1号位置，那么只可能a进栈，马上出栈，此时还剩元素b、c、d等待操作，就是子问题f(3)；</p></li><li><p>2) 如果元素a在2号位置，那么一定有一个元素比a先出栈，即有f(1)种可能顺序（只能是b），还剩c、d，即f(2)，   根据乘法原理，一共的顺序个数为f(1) * f(2)；</p></li><li><p>3) 如果元素a在3号位置，那么一定有两个元素比1先出栈，即有f(2)种可能顺序（只能是b、c），还剩d，即f(1)，根据乘法原理，一共的顺序个数为f(2) * f(1)；</p></li><li><p>4) 如果元素a在4号位置，那么一定是a先进栈，最后出栈，那么元素b、c、d的出栈顺序即是此小问题的解，即     f(3)；</p></li></ul><blockquote><p>结合所有情况，即f(4) = f(3) + f(2) * f(1) + f(1) * f(2) + f(3);<br>为了规整化，我们定义f(0) = 1；于是f(4)可以重新写为：<br>f(4) = f(0)<em>f(3) + f(1)</em>f(2) + f(2) * f(1) + f(3)<em>f(0)<br>然后我们推广到n，推广思路和n=4时完全一样，于是我们可以得到：<br>f(n) = f(0)</em>f(n-1) + f(1)<em>f(n-2) + … + f(n-1)</em>f(0)</p></blockquote><p>即</p><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/1342588652_5874.png"  alt="1342588652_5874"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+    
+      <category term="数据结构" scheme="http://www.fangmingxuan.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="数据结构" scheme="http://www.fangmingxuan.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
   
   <entry>
     <title>Mysql Fighting</title>
@@ -575,34 +601,6 @@
       <category term="Vim" scheme="http://www.fangmingxuan.com/tags/Vim/"/>
     
       <category term="Markdown" scheme="http://www.fangmingxuan.com/tags/Markdown/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用windows server 2016 组建 nas</title>
-    <link href="http://www.fangmingxuan.com/2020/05/winserver%202016%E7%BB%84%E5%BB%BAnas/"/>
-    <id>http://www.fangmingxuan.com/2020/05/winserver%202016%E7%BB%84%E5%BB%BAnas/</id>
-    <published>2020-05-05T07:03:43.692Z</published>
-    <updated>2020-05-08T02:36:35.888Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="使用windows-server-2016-组建-nas"><a href="#使用windows-server-2016-组建-nas" class="headerlink" title="使用windows server 2016 组建 nas"></a>使用windows server 2016 组建 nas</h1>    <div id="aplayer-LTKTvjGL" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="2111364820" data-server="tencent" data-type="playlist" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="200px" data-preload="auto" data-theme="#FF4081"    ></div><p>Q:为什么使用 windows server 2016 ?</p><p>A:相对于freenas ,黑裙等纯nas系统,windows server 更自由,可以实现nas需求的同时来做其他的事情,至于做什么,看个人需求.</p><p>windows server 2016 的下载地址: <a href="https://msdn.itellyou.cn/" target="_blank" rel="noopener">MSDN</a></p><p>安装过程就 省略了,可以参照其他windows系统安装.</p><h2 id="一-开启远程桌面功能开启远程桌面功能，这样在我的主力机上就可以直接操控这台NAS了。网上也有相关的文档。"><a href="#一-开启远程桌面功能开启远程桌面功能，这样在我的主力机上就可以直接操控这台NAS了。网上也有相关的文档。" class="headerlink" title="一.开启远程桌面功能开启远程桌面功能，这样在我的主力机上就可以直接操控这台NAS了。网上也有相关的文档。"></a>一.开启远程桌面功能开启远程桌面功能，这样在我的主力机上就可以直接操控这台NAS了。网上也有相关的文档。</h2><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505002315359.png"  alt="image-20200505002315359"></p><h2 id="二-添加everyone和guest账号的所有读写权限，这样就可以在局域网内访问共享的文件夹啦"><a href="#二-添加everyone和guest账号的所有读写权限，这样就可以在局域网内访问共享的文件夹啦" class="headerlink" title="二.添加everyone和guest账号的所有读写权限，这样就可以在局域网内访问共享的文件夹啦."></a>二.添加everyone和guest账号的所有读写权限，这样就可以在局域网内访问共享的文件夹啦.</h2><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505131223894.png"  alt="image-20200505131223894"></p><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505131232133.png"  alt="image-20200505131232133"></p><h2 id="三-samba"><a href="#三-samba" class="headerlink" title="三.samba"></a>三.samba</h2><h3 id="1-安装文件服务器资源管理器"><a href="#1-安装文件服务器资源管理器" class="headerlink" title="1.安装文件服务器资源管理器"></a>1.安装文件服务器资源管理器</h3><ul><li>在仪表盘中找到”<strong>添加角色功能</strong>“后下一步.</li></ul><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505133832392.png"  alt="image-20200505133832392"></p><ul><li><strong>服务器选择</strong></li></ul><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505133943341.png"  alt="image-20200505133943341"></p><ul><li>找到<strong>文件服务器资源管理器</strong> 点击后,<strong>添加功能</strong></li></ul><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505134051422.png"  alt="image-20200505134051422"></p><ul><li><strong>文件资源管理器</strong>打勾后 <strong>下一步</strong></li></ul><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505134213502.png"  alt="image-20200505134213502"></p><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505134300887.png"  alt="image-20200505134300887"></p><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505134336446.png"  alt="image-20200505134336446"></p><ul><li><strong>等待安装完成</strong>,完成后开始下一步 <strong>搭建SMB共享</strong></li></ul><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505134509660.png"  alt="image-20200505134509660"></p><h3 id="2-开始搭建SMB共享"><a href="#2-开始搭建SMB共享" class="headerlink" title="2.开始搭建SMB共享"></a>2.开始搭建SMB共享</h3><ul><li>仪表盘中点击 <strong>文件和存储服务</strong></li></ul><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505134725495.png"  alt="image-20200505134725495"></p><ul><li>找到<strong>共享</strong>后,<strong>右键</strong> <strong>新建共享</strong></li></ul><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505134815807.png"  alt="image-20200505134815807"></p><ul><li>选择 <strong>SMB共享 -高级</strong> ,下一步</li></ul><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505134858550.png"  alt="image-20200505134858550"></p><ul><li>选择路径</li></ul><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505135000937.png"  alt="image-20200505135000937"></p><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505135042097.png"  alt="image-20200505135042097"></p><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505135137487.png"  alt="image-20200505135137487"></p><h3 id="3-权限设定——-重要"><a href="#3-权限设定——-重要" class="headerlink" title="3.权限设定——-重要!!!!!!"></a>3.权限设定——-重要!!!!!!</h3><p><img src="/" class="lazyload" data-src="upload%5Cimage-20200505135222216.png"  alt="image-20200505135222216"></p><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505135354015.png"  alt="image-20200505135354015"></p><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505135509921.png"  alt="image-20200505135509921"></p><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505140003683.png"  alt="image-20200505140003683"></p><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505140134513.png"  alt="image-20200505140134513"></p><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505140203519.png"  alt="image-20200505140203519"></p><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505140221661.png"  alt="image-20200505140221661"></p><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505140237138.png"  alt="image-20200505140237138"></p><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505140255502.png"  alt="image-20200505140255502"></p><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505140315993.png"  alt="image-20200505140315993"></p><p>4.完成</p><p><img src="/" class="lazyload" data-src="http://qiniuph.fangmingxuan.com/img/image-20200505141008470.png"  alt="image-20200505141008470"></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
-      
-    
-    </summary>
-    
-    
-      <category term="nas" scheme="http://www.fangmingxuan.com/categories/nas/"/>
-    
-    
-      <category term="nas" scheme="http://www.fangmingxuan.com/tags/nas/"/>
-    
-      <category term="winserver" scheme="http://www.fangmingxuan.com/tags/winserver/"/>
     
   </entry>
   
